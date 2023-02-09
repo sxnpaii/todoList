@@ -1,0 +1,68 @@
+@use "../scndGlobals";
+
+.header {
+    @include scndGlobals.flexbox($j-c: space-between);
+    width: 100%;
+    margin-bottom: 70px;
+
+    .leftSide {
+        max-width: 400px;
+        width: 100%;
+        @include scndGlobals.flexbox($j-c: space-between);
+
+        .logo {
+            @include scndGlobals.flexbox();
+            min-height: 50px;
+            gap: 20px;
+
+            h6 {
+                @include scndGlobals.defText($clr: scndGlobals.$white, $f-w: 500);
+
+                span {
+                    color: scndGlobals.$primClr;
+                }
+            }
+        }
+
+        .inp {
+            @include scndGlobals.flexbox();
+
+            i {
+                color: scndGlobals.$white;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            input {
+                @include scndGlobals.heading($clr: scndGlobals.$white, $f-w: 500);
+                display: block;
+                background: transparent;
+                border: none;
+                padding: 5px;
+            }
+        }
+    }
+
+    .user {
+        @include scndGlobals.flexbox();
+        gap: 35px;
+
+        i {
+            cursor: pointer;
+        }
+
+        .ava {
+            cursor: pointer;
+            border-radius: 50%;
+            overflow: hidden;
+            background: conic-gradient(from 180deg at 50% 50%, #FD648E 0deg, #884CB2 178.12deg, #FD648E 360deg);
+            backdrop-filter: blur(15px);
+
+            img {
+                border-radius: 50%;
+                transform: scale(.8);
+            }
+ 
+        }
+    }
+}

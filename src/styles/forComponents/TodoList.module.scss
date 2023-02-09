@@ -1,0 +1,34 @@
+@use "../scndGlobals";
+
+.todos {
+    @include scndGlobals.flexbox($a-i: flex-start);
+    height: 100vh;
+
+    .toodo {
+        margin: 15px;
+        padding: 18px;
+        background: scndGlobals.$white;
+        border-radius: 20px;
+        max-width: 400px;
+
+        .body {
+            @include scndGlobals.flexbox();
+            gap: 20px;
+            flex-wrap: nowrap;
+
+            .ava {
+                border: 3px solid scndGlobals.$primClr;
+            }
+
+            .text {
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .status {
+            @include scndGlobals.flexbox($j-c: space-between);
+        }
+    }
+}

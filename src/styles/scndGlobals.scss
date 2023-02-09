@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+// vars
+$Montserrat: 'Montserrat,' sans-serif;
+$Poppins: 'Poppins', sans-serif;
+$primClr: #884CB2;
+$headingBlack: #24272C;
+$defTextBlack: #555;
+$successClr: #10F126;
+$errorClr: #F11010;
+$white: #fff;
+
+// mixins
+@mixin heading($f-f: $Poppins, $f-w: 700, $clr: $white) {
+    font-family: $f-f;
+    font-weight: $f-w;
+    color: $clr;
+}
+
+@mixin defText($clr: $defTextBlack, $f-w: 400) {
+    font-family: $Poppins;
+    font-weight: $f-w ;
+    color: $clr;
+}
+
+@mixin flexbox($f-d: row, $a-i: center, $j-c: center) {
+    display: flex;
+    flex-direction: $f-d;
+    align-items: $a-i;
+    justify-content: $j-c;
+    flex-wrap: wrap;
+
+}

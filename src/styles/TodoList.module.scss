@@ -1,0 +1,11 @@
+@use "./scndGlobals";
+
+.todos {
+    color: white !important;
+    display: flex;
+    flex-wrap: wrap;
+
+    .toodo {
+        width: 200px;
+    }
+}
