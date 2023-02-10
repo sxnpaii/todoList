@@ -1,0 +1,42 @@
+@use "../scndGlobals";
+
+.subHeader {
+    margin-bottom: 16px;
+    @include scndGlobals.flexbox($j-c: space-between);
+    @media (max-width:992px) {
+        gap: 40px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    .heading {
+        @include scndGlobals.heading()
+    }
+
+    .btns {
+        .dropdown {
+            button.dropBtn {
+                padding: 10px 21px;
+                border: none;
+                @include scndGlobals.defText();
+                border-radius: 8px;
+            }
+            .menu{
+                width: 100%;
+            }
+        }
+
+        @include scndGlobals.flexbox();
+        gap: 25px;
+
+        .addNew {
+            @include scndGlobals.defText($clr: scndGlobals.$white);
+            @include scndGlobals.flexbox();
+            gap: 8px;
+            background: scndGlobals.$primClr;
+            padding: 12px 53px;
+            border-radius: 15px;
+        }
+    }
+
+}

@@ -1,34 +1,93 @@
 @use "../scndGlobals";
+.head{
+    @include scndGlobals.defText($clr: scndGlobals.$white);
+    opacity: .3;
+    margin-bottom: 40px;
+}
 
 .todos {
     @include scndGlobals.flexbox($a-i: flex-start);
     height: 100vh;
 
-    .toodo {
-        margin: 15px;
-        padding: 18px;
-        background: scndGlobals.$white;
-        border-radius: 20px;
-        max-width: 400px;
+    @media(max-width: 1400px) {
+        justify-content: start;
+    }
 
-        .body {
-            @include scndGlobals.flexbox();
-            gap: 20px;
-            flex-wrap: nowrap;
+    .cols {
+        @media (min-width:1400px) {
+            max-width: 430px;
+        }
 
-            .ava {
-                border: 3px solid scndGlobals.$primClr;
+        @media(max-width: 1400px) {
+            width: 50%;
+        }
+
+        @media (max-width:768px) {
+            width: 100%;
+        }
+
+        .toodo {
+            margin: 15px;
+            padding: 18px;
+            background: scndGlobals.$white;
+            border-radius: 20px;
+
+            .body {
+                @include scndGlobals.flexbox();
+                gap: 20px;
+                flex-wrap: nowrap;
+
+                @media (max-width:992px) {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                .ava {
+                    border: 3px solid scndGlobals.$primClr;
+                    border-radius: 50%;
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+
+                .text {
+                    h6 {
+                        @include scndGlobals.heading($clr: scndGlobals.$headingBlack);
+                        margin-bottom: 6px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        @include scndGlobals.defText($clr: scndGlobals.$defTextBlack);
+                        margin-bottom: 10px;
+                    }
+                }
             }
 
-            .text {
+            .status {
+                @include scndGlobals.flexbox($j-c: space-between, $a-i: center);
+
                 p {
+                    @include scndGlobals.heading($f-w: 400, $clr: scndGlobals.$headingBlack);
                     font-size: 13px;
+                }
+
+                a {
+                    padding: 3px 10px;
+                    border-radius: 20px;
+                    @include scndGlobals.flexbox();
+                    @include scndGlobals.defText($clr: scndGlobals.$successClr);
+                    background: #10f12635;
+
+                }
+
+                a.refuse {
+                    background: #f1101088;
+                    @include scndGlobals.defText($clr: scndGlobals.$errorClr);
                 }
             }
         }
 
-        .status {
-            @include scndGlobals.flexbox($j-c: space-between);
-        }
     }
 }
