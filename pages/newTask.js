@@ -1,3 +1,4 @@
+import cls from "../src/styles/NewTask.module.scss";
 import Header from "../src/components/Header";
 import SubHeader from "../src/components/SubHeader";
 const newTask = () => {
@@ -20,8 +21,16 @@ const newTask = () => {
             <section>
                 <div className="container">
                     <div className="row">
-                        <div className="dropImage">
-                            
+                        <div className={cls.dropImage}>
+                            <div className={cls.inner}>
+                                <img src="/icons/export.svg" alt="" />
+                                <p>Drag image <br /> or browse to  <a href="">select file</a></p>
+                            </div>
+                        </div>
+                        <div className={cls.editor}>
+                            <div className={cls.body}>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -31,4 +40,4 @@ const newTask = () => {
     )
 }
 
-export default newTask
+export default newTask;
